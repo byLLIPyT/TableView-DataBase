@@ -9,11 +9,11 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
+    
     @IBOutlet var brandLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!
     @IBOutlet var modelLabel: UILabel!
     @IBOutlet var classLabel: UILabel!
-           
+    
 }
