@@ -9,9 +9,7 @@
 import UIKit
 
 class AddCarViewController: UITableViewController {
-
-    var newCar = Car()
-    
+       
     @IBOutlet var saveButton: UIBarButtonItem!
     
     @IBOutlet var brandText: UITextField!
@@ -22,12 +20,11 @@ class AddCarViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if !isCreate {
-            DispatchQueue.main.async {
-                self.newCar.saveCarDefault()
-            }
+           
+        DispatchQueue.main.async {
+            
         }
+        
         
         tableView.tableFooterView = UIView()
     }
@@ -38,7 +35,10 @@ class AddCarViewController: UITableViewController {
     
     
     func addNewCar() {
-        //newCar = Cars(brand: brandText.text, model: modelText.text, type: typeText.text, year: yearText.text, classCar: classText.text)
+                
+        let newCar = Car(brand: brandText.text, model: modelText.text, type: typeText.text, year: yearText.text, classCar: classText.text)
+        
+        StorageManager.saveObject(newCar)
     }
    
     @IBAction func cancekAction(_ sender: Any) {

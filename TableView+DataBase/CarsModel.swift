@@ -23,6 +23,17 @@ class Car: Object {
     @objc dynamic var year: String?
     @objc dynamic var classCar: String?
     
+    
+    convenience init(brand: String?, model: String?, type: String?, year: String?, classCar: String?) {
+        self.init()
+        
+        self.brand = brand
+        self.model = model
+        self.type = type
+        self.year = year
+        self.classCar = classCar
+    }
+    
     var carsDef = [
         carsDefault(brand: "BMW", model: "3", type: "sedan", year: "2018", classCar: "C-class"),
         carsDefault(brand: "Toyota", model: "Camry", type: "sedan", year: "2015", classCar: "E-class"),
