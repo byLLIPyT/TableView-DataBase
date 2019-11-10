@@ -116,6 +116,7 @@
                                     <outlet property="modelLabel" destination="65R-tH-eZh" id="pFd-tZ-f5H"/>
                                     <outlet property="typeLabel" destination="PIN-gJ-Qw6" id="r73-Zk-gwD"/>
                                     <outlet property="yearLabel" destination="O9M-ag-cxn" id="nfL-k1-jay"/>
+                                    <segue destination="tkG-rW-srq" kind="show" identifier="ShowDetail" id="K7a-e6-LX9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -141,7 +142,7 @@
             <objects>
                 <tableViewController id="tkG-rW-srq" customClass="AddCarViewController" customModule="TableView_DataBase" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aSP-96-9oR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -355,7 +356,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQq-W5-Hc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="phd-Lj-xJv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2257.971014492754" y="141.96428571428569"/>
+            <point key="canvasLocation" x="2101" y="142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sv8-uP-86D">
@@ -371,7 +372,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTn-bz-aGK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="142"/>
+            <point key="canvasLocation" x="-216" y="-267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qcy-Q2-llq">
@@ -389,7 +390,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="it1-xI-E0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1347.8260869565217" y="141.96428571428569"/>
+            <point key="canvasLocation" x="1330" y="-267"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="K7a-e6-LX9"/>
+    </inferredMetricsTieBreakers>
 </document>

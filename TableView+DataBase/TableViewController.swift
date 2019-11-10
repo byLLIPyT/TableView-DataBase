@@ -56,10 +56,20 @@ class TableViewController: UITableViewController {
     
     // MARK: - Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let car = cars[indexPath.row]
+            let addCarVC = segue.destination as! AddCarViewController
+            addCarVC.currentCar = car
+            
+        }
+    }
     @IBAction func unwindSeque(_ seque: UIStoryboardSegue) {
         
         guard let newCarVC = seque.source as? AddCarViewController else { return }
         
         newCarVC.addNewCar()
+        tableView.reloadData()
     }
 }

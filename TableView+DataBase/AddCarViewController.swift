@@ -10,6 +10,8 @@ import UIKit
 
 class AddCarViewController: UITableViewController {
     
+    var currentCar: Car?
+    
     @IBOutlet var saveButton: UIBarButtonItem!
     
     @IBOutlet var brandText: UITextField!
@@ -22,6 +24,7 @@ class AddCarViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        setupEditScreen()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -32,12 +35,43 @@ class AddCarViewController: UITableViewController {
     
     func addNewCar() {
         
-        let newCar = Car(brand: brandText.text, model: modelText.text, type: typeText.text, year: yearText.text, classCar: classText.text)
+        let newCar = Car(brand: brandText.text,
+                         model: modelText.text,
+                         type: typeText.text,
+                         year: yearText.text,
+                         classCar: classText.text)
+        if currentCar != nil {
+            try? realm?.write {
+                currentCar?.brand = newCar.brand
+                currentCar?.model = newCar.model
+                currentCar?.type = newCar.type
+                currentCar?.year = newCar.year
+                currentCar?.classCar = newCar.classCar
+            }
+        } else {
         StorageManager.saveObject(newCar)
+        }
     }
     
     @IBAction func cancekAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func setupEditScreen() {
+        if currentCar != nil {
+            setupNavigationBar()
+            modelText.text = currentCar?.model
+            brandText.text = currentCar?.brand
+            classText.text = currentCar?.classCar
+            yearText.text = currentCar?.year
+            typeText.text = currentCar?.type
+                        
+        }
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = nil
+        title = currentCar?.model
     }
     
 }
