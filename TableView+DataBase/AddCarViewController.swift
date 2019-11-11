@@ -36,7 +36,7 @@ class AddCarViewController: UITableViewController {
     func addNewCar() {
         
         let newCar = Car(brand: brandText.text,
-                         model: modelText.text,
+                         model: modelText.text, 
                          type: typeText.text,
                          year: yearText.text,
                          classCar: classText.text)
