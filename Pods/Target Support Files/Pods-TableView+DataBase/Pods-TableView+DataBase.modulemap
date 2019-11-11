@@ -1,0 +1,6 @@
+framework module Pods_TableView_DataBase {
+  umbrella header "Pods-TableView+DataBase-umbrella.h"
+
+  export *
+  module * { export * }
+}
